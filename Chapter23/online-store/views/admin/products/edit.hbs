@@ -1,0 +1,51 @@
+{{#> admin}}
+  {{#*inline "content"}}
+    <div class="card mb-4">
+      <div class="card-header">
+        Edit Product
+      </div>
+      <div class="card-body">
+        {{#with viewData.product}}
+        <form method="POST" action="/admin/products/{{getId}}/update" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col">
+              <div class="mb-3 row">
+                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                <div class="col-lg-10 col-md-6 col-sm-12">
+                  <input name="name" value="{{getName}}" type="text" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3 row">
+                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
+                <div class="col-lg-10 col-md-6 col-sm-12">
+                  <input name="price" value="{{getPrice}}" type="number" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3 row">
+                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image:</label>
+                <div class="col-lg-10 col-md-6 col-sm-12">
+                  <input class="form-control" type="file" name="image">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              &nbsp;
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="3" required>{{getDescription}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        {{/with}}
+      </div>
+    </div>
+  {{/inline}}
+{{/admin}}
