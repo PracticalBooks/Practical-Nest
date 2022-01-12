@@ -12,6 +12,7 @@ export class AuthController {
   register() {
     const viewData = [];
     viewData['title'] = 'User Register - Online Store';
+    viewData['subtitle'] = 'User Register';
     return {
       viewData: viewData,
     };
@@ -34,6 +35,7 @@ export class AuthController {
   login() {
     const viewData = [];
     viewData['title'] = 'User Login - Online Store';
+    viewData['subtitle'] = 'User Login';
     return {
       viewData: viewData,
     };
