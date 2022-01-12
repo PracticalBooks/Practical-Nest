@@ -7,6 +7,11 @@
             <div class="card-header">Register</div>
 
             <div class="card-body">
+              {{#if flashErrors}}
+                {{#each flashErrors}}
+                  <p class="alert alert-danger">{{this}}</p>
+                {{/each}}
+              {{/if}}
               <form method="POST" action="/auth/store">
                 <div class="form-group row">
                   <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>

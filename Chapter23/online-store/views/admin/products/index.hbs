@@ -5,6 +5,11 @@
         Create Products
       </div>
       <div class="card-body">
+        {{#if flashErrors}}
+          {{#each flashErrors}}
+            <p class="alert alert-danger">{{this}}</p>
+          {{/each}}
+        {{/if}}
         <form method="POST" action="/admin/products/store"enctype="multipart/form-data">
           <div class="row">
             <div class="col">
