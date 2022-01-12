@@ -1,0 +1,63 @@
+{{#> admin}}
+  {{#*inline "content"}}
+    <div class="card mb-4">
+      <div class="card-header">
+        Create Products
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/admin/products/store">
+          <div class="row">
+            <div class="col">
+              <div class="mb-3 row">
+                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                <div class="col-lg-10 col-md-6 col-sm-12">
+                  <input name="name" type="text" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3 row">
+                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
+                <div class="col-lg-10 col-md-6 col-sm-12">
+                  <input name="price" type="number" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Manage Products
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each viewData.products}}
+            <tr>
+              <td>{{getId}}</td>
+              <td>{{getName}}</td>
+              <td>Edit</td>
+              <td>Delete</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {{/inline}}
+{{/admin}}
