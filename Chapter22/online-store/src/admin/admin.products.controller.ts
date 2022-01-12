@@ -52,9 +52,9 @@ export class AdminProductsController {
   @UseInterceptors(FileInterceptor('image', { dest: './public/uploads' }))
   @Redirect('/admin/products')
   async upload(
-    @Body() body, 
+    @Body() body,
     @UploadedFile() file: Express.Multer.File,
-    @Param('id') id: string
+    @Param('id') id: string,
   ) {
     const product = await this.productsService.findOne(id);
     product.setName(body.name);

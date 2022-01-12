@@ -1,4 +1,4 @@
-import { Controller, Get, Render, Param, Res  } from '@nestjs/common';
+import { Controller, Get, Render, Param, Res } from '@nestjs/common';
 import { ProductsService } from './models/products.service';
 
 @Controller('/products')

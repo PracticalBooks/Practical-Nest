@@ -22,7 +22,12 @@
           <a class="nav-link active" href="/products">Products</a>
           <a class="nav-link active" href="/about">About</a>
           <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+          {{#if session.user}}
+          <a class="nav-link active" href="/auth/logout">Logout ({{session.user.name}})</a>
+          {{else}}
+          <a class="nav-link active" href="/auth/login">Login</a>
           <a class="nav-link active" href="/auth/register">Register</a>
+          {{/if}}
         </div>
       </div>
     </div>
