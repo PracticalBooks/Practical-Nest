@@ -64,8 +64,18 @@
             <tr>
               <td>{{getId}}</td>
               <td>{{getName}}</td>
-              <td>Edit</td>
-              <td>Delete</td>
+              <td>
+                <a class="btn btn-primary" href="/admin/products/{{getId}}">
+                  <i class="bi-pencil"></i>
+                </a>
+              </td>
+              <td>
+                <form action="/admin/products/{{getId}}" method="POST">
+                  <button class="btn btn-danger">
+                    <i class="bi-trash"></i>
+                  </button>
+                </form>
+              </td>
             </tr>
             {{/each}}
           </tbody>
