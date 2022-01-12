@@ -11,6 +11,7 @@ export class AuthController {
   register() {
     const viewData = [];
     viewData['title'] = 'User Register - Online Store';
+    viewData['subtitle'] = 'User Register';
     return {
       viewData: viewData,
     };
