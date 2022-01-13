@@ -30,6 +30,13 @@ async function bootstrap() {
     }
     next();
   });
+  app.use('/admin*', function (req, res, next) {
+    if (req.session.user && req.session.user.role == 'admin') {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  });
 
   await app.listen(3000);
 }
