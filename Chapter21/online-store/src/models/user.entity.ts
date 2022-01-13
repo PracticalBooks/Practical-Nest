@@ -53,7 +53,7 @@ export class User {
   }
 
   getRole(): string {
-    return this.email;
+    return this.role;
   }
 
   setRole(role: string) {
@@ -61,7 +61,7 @@ export class User {
   }
 
   getBalance(): number {
-    return this.id;
+    return this.balance;
   }
 
   setBalance(balance: number) {
