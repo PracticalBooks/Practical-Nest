@@ -1,0 +1,16 @@
+{{#> app}}
+  {{#*inline "content"}}
+    <div class="row">
+      {{#each viewData.products}}
+      <div class="col-md-4 col-lg-3 mb-2">
+        <div class="card">
+          <img src="/uploads/{{getImage}}" class="card-img-top img-card">
+          <div class="card-body text-center">
+            <a href="/products/{{getId}}" class="btn bg-primary text-white">{{getName}}</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  {{/inline}}
+{{/app}}
