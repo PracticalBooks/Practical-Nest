@@ -1,0 +1,42 @@
+{{#> app}}
+  {{#*inline "content"}}
+    <div class="card">
+      <div class="card-header">
+        Products in Cart
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each viewData.productsInCart}}
+            <tr>
+              <td>{{getId}}</td>
+              <td>{{getName}}</td>
+              <td>${{getPrice}}</td>
+              <td>{{lookup ../session.products id}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="text-end">
+            <a class="btn btn-outline-secondary mb-2"><b>Total to pay:</b> ${{viewData.total}}</a>
+            {{#if viewData.productsInCart}}
+            <a href="/cart/purchase" class="btn bg-primary text-white mb-2">Purchase</a>
+            <a href="/cart/delete" class="btn btn-danger mb-2">
+              Remove all products from Cart
+            </a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/inline}}
+{{/app}}
