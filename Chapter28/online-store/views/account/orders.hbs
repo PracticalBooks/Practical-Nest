@@ -1,0 +1,46 @@
+{{#> app}}
+  {{#*inline "content"}}
+    {{#each viewData.orders}}
+    <div class="card mb-4">
+      <div class="card-header">
+        Order #{{getId}}
+      </div>
+      <div class="card-body">
+        <b>Date:</b> {{getDate}}<br />
+        <b>Total:</b> ${{getTotal}}<br />
+        <table class="table table-bordered table-striped text-center mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Item ID</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+            <tbody>
+              {{#each getItems}}
+              <tr>
+                <td>{{getId}}</td>
+                {{#with getProduct}}
+                <td>
+                  <a class="link-success" href="/products/{{getId}}">
+                    {{getName}}
+                  </a>
+                </td>
+                {{/with}}
+                <td>${{getPrice}}</td>
+                <td>{{getQuantity}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </thead>
+          
+        </table>
+      </div>
+    </div>
+    {{else}}
+    <div class="alert alert-danger" role="alert">
+      Seems to be that you have not purchased anything in our store =(.
+    </div>
+    {{/each}}
+  {{/inline}}
+{{/app}}

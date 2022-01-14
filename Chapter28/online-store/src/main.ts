@@ -37,6 +37,13 @@ async function bootstrap() {
       res.redirect('/');
     }
   });
+  app.use('/account*', function (req, res, next) {
+    if (req.session.user) {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  });
 
   await app.listen(3000);
 }
